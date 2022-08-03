@@ -1,0 +1,175 @@
+div {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    background-color: #0ead69;
+}
+
+#questionDisplay {
+    padding: 1%;
+    height: 5%;
+}
+
+#answerArea {
+    margin-left: 35%;
+}
+
+
+#moneyInBag {
+    margin-left: 30%;
+    margin-right: 40%;
+}
+
+#moneyBagImg {
+    width: 130px;
+    margin-left: 7%;
+}
+
+
+#button-100 {
+  grid-area: button-100;
+  padding: 15%;
+}
+
+#button-101 {
+  grid-area: button-101;
+  padding: 15%;
+}
+
+#button-102 {
+  grid-area: button-102;
+  padding: 15%;
+}
+
+#button-103 {
+  grid-area: button-103;
+  padding: 15%;
+}
+
+#button-104 {
+  grid-area: button-104;
+  padding: 15%;
+}
+
+#button-200 {
+  grid-area: button-200;
+  padding: 15%;
+}
+#button-201 {
+  grid-area: button-201;
+  padding: 15%;
+}
+#button-202 {
+  grid-area: button-202;
+  padding: 15%;
+}
+#button-203 {
+  grid-area: button-203;
+  padding: 15%;
+}
+#button-204 {
+  grid-area: button-204;
+  padding: 15%;
+}
+
+
+#button-400 {
+  grid-area: button-400;
+  padding: 15%;
+}
+#button-401 {
+  grid-area: button-401;
+  padding: 15%;
+}
+#button-402 {
+  grid-area: button-402;
+  padding: 15%;
+}
+#button-403 {
+  grid-area: button-403;
+  padding: 15%;
+}
+#button-404 {
+  grid-area: button-404;
+  padding: 15%;
+}
+
+
+#button-600 {
+  grid-area: button-600;
+  padding: 15%;
+}
+#button-601 {
+  grid-area: button-601;
+  padding: 15%;
+}
+#button-602 {
+  grid-area: button-602;
+  padding: 15%;
+}
+#button-603 {
+  grid-area: button-603;
+  padding: 15%;
+}
+#button-604 {
+  grid-area: button-604;
+  padding: 15%;
+}
+
+
+#button-800 {
+  grid-area: button-800;
+  padding: 15%;
+}
+#button-801 {
+  grid-area: button-801;
+  padding: 15%;
+}
+#button-802 {
+  grid-area: button-802;
+  padding: 15%;
+}
+#button-803 {
+  grid-area: button-803;
+  padding: 15%;
+}
+#button-804 {
+  grid-area: button-804;
+  padding: 15%;
+}
+
+#jeopardy {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "button-100 button-101 button-102 button-103 button-104"
+    "button-200 button-201 button-202 button-203 button-204"
+    "button-400 button-401 button-402 button-403 button-404"
+    "button-600 button-601 button-602 button-603 button-604"
+    "button-800 button-801 button-802 button-803 button-804";
+}
+
+.btn100 {
+    background-color: #ffca3a;
+}
+
+.btn200 {
+    background-color: #8ac926;
+}
+
+.btn400 {
+    background-color: #ff595e;
+}
+
+.btn600 {
+    background-color: #1982c4;
+}
+
+.btn800 {
+    background-color: #6a4c93;
+}
