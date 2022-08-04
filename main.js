@@ -31,7 +31,7 @@ let clicked = false;
 
 // Puling data out of file
 let readJeopardyData = async () => {
-    let rawJeopardyData = await fetch('jeopardy.json')
+    let rawJeopardyData = await fetch('jeopardy.json');
     let data = await rawJeopardyData.json();
     // console.log(data);
 
@@ -55,6 +55,7 @@ EVENT LISTENERS
 // Submit Button
 submitButton.addEventListener('click', (event) => {
     event.preventDefault()
+    clicked = false;
     if (answerArea.value.toLowerCase() === dataForSubmit.toLowerCase()) {
         scoreCtr += score;
         alert('Congrats ! You made some Money!');
@@ -63,8 +64,10 @@ submitButton.addEventListener('click', (event) => {
         answerArea.value = '';
     } else if (answerArea.value.toLowerCase() !== dataForSubmit.toLowerCase()) {
         alert('Incorrect');
+        console.log(score);
         scoreCtr -= score;
-        moneyBag.innertext = `Money Bag: $${scoreCtr}`;
+        console.log(scoreCtr);
+        moneyBag.innerText = `Money Bag: $${scoreCtr}`;
         questionDisplay.innerText = ''
         answerArea.value = '';
     }
@@ -86,29 +89,32 @@ for (let button100 of button100List) {
 
 
     button100.addEventListener('click', () => {
-        if (button100.innerText === '$100') {
-            let randomQuestion = (arr) => {
-                let randomNumber = Math.ceil(Math.random() * 2009); // randomINumber is the index number that comes out of this formula. Giving us new random question
-                button100.removeEventListener('mouseenter', banana);
-                button100.removeEventListener('mouseout', banana);
+        if (clicked === false) {
+            if (button100.innerText === '$100') {
+                let randomQuestion = (arr) => {
+                    let randomNumber = Math.ceil(Math.random() * 2009); // randomINumber is the index number that comes out of this formula. Giving us new random question
+                    button100.removeEventListener('mouseenter', banana);
+                    button100.removeEventListener('mouseout', banana);
 
-                //  Adds the value
-                if (button100.innerText === '$100') {
-                    score = 0;
-                    score += 100;
-                    console.log(score);
-                    button100.innerText = 'X';
+                    //  Adds the value
+                    if (button100.innerText === '$100') {
+                        clicked = true;
+                        score = 0;
+                        score += 100;
+                        console.log(score);
+                        button100.innerText = 'X';
+                    }
+                    // Fades out button after clicked
+                    if (button100.style.opacity === '') {
+                        button100.style.opacity = '0.5';
+                    }
+                    console.log(arr[randomNumber]);
+                    questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
+                    dataForMoneyBag = button100.innerText;
+                    dataForSubmit = arr[randomNumber].answer;
                 }
-                // Fades out button after clicked
-                if (button100.style.opacity === '') {
-                    button100.style.opacity = '0.5';
-                }
-                console.log(arr[randomNumber]);
-                questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
-                dataForMoneyBag = button100.innerText;
-                dataForSubmit = arr[randomNumber].answer;
+                randomQuestion(one100$Questions);
             }
-            randomQuestion(one100$Questions);
         }
 
     })
@@ -123,35 +129,41 @@ for (let button200 of button200List) {
         } else {
             button200.style.opacity = '';
         }
-    }
+    };
     button200.addEventListener('mouseenter', banana);
     button200.addEventListener('mouseout', banana);
 
     button200.addEventListener('click', () => {
-        if (button200.innerText === '$200') {
-            let randomQuestion = (arr) => {
-                let randomNumber = Math.ceil(Math.random() * 2009); // randomItem is the index number that comes out of this 
-                button200.removeEventListener('mouseenter', banana);
-                button200.removeEventListener('mouseout', banana);
+        if (clicked === false) {
+            if (button200.innerText === '$200') {
+                let randomQuestion = (arr) => {
+                    let randomNumber = Math.ceil(Math.random() * 2009); // randomItem is the index number that comes out of this 
+                    button200.removeEventListener('mouseenter', banana);
+                    button200.removeEventListener('mouseout', banana);
 
-                // Adds value to MoneyBag
-                if (button200.innerText === '$200') {
-                    score = 0;
-                    score += 200;
-                    console.log(score);
-                    button200.innerText = 'X';
+                    // Adds value to MoneyBag
+                    if (button200.innerText === '$200') {
+                        clicked = true;
+                        score = 0;
+                        score += 200;
+                        console.log(score);
+                        button200.innerText = 'X';
+                    }
+                    // Fades out button after clicked
+                    if (button200.style.opacity === '') {
+                        button200.style.opacity = '0.5';
+                    }
+                    console.log(arr[randomNumber]);
+                    questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
+                    dataForMoneyBag = button200.innerText;
+                    dataForSubmit = arr[randomNumber].answer;
                 }
-                // Fades out button after clicked
-                if (button200.style.opacity === '') {
-                    button200.style.opacity = '0.5';
-                }
-                console.log(arr[randomNumber]);
-                questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
-                dataForMoneyBag = button200.innerText;
-                dataForSubmit = arr[randomNumber].answer;
+                randomQuestion(two200$Questions);
             }
-            randomQuestion(two200$Questions);
+
         }
+
+
     })
 }
 
@@ -170,30 +182,33 @@ for (let button400 of button400List) {
 
 
     button400.addEventListener('click', () => {
-        if (button400.innerText === '$400') {
-            let randomQuestion = (arr) => {
-                let randomNumber = Math.ceil(Math.random() * 2009); // randomItem is the index number that comes out of this 
-                button400.removeEventListener('mouseenter', banana);
-                button400.removeEventListener('mouseout', banana);
+        if (clicked === false) {
+            if (button400.innerText === '$400') {
+                let randomQuestion = (arr) => {
+                    let randomNumber = Math.ceil(Math.random() * 2009); // randomItem is the index number that comes out of this 
+                    button400.removeEventListener('mouseenter', banana);
+                    button400.removeEventListener('mouseout', banana);
 
-                // Adds value to MoneyBag
-                if (button400.innerText === '$400') {
-                    score = 0;
-                    score += 400;
-                    console.log(score);
-                    button400.innerText = 'X';
-                }
+                    // Adds value to MoneyBag
+                    if (button400.innerText === '$400') {
+                        clicked = true;
+                        score = 0;
+                        score += 400;
+                        console.log(score);
+                        button400.innerText = 'X';
+                    }
 
-                // Fades out button after clicked
-                if (button400.style.opacity === '') {
-                    button400.style.opacity = '0.5';
+                    // Fades out button after clicked
+                    if (button400.style.opacity === '') {
+                        button400.style.opacity = '0.5';
+                    }
+                    console.log(arr[randomNumber]);
+                    questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
+                    dataForMoneyBag = button400.innerText;
+                    dataForSubmit = arr[randomNumber].answer;
                 }
-                console.log(arr[randomNumber]);
-                questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
-                dataForMoneyBag = button400.innerText;
-                dataForSubmit = arr[randomNumber].answer;
+                randomQuestion(four400$Questions);
             }
-            randomQuestion(four400$Questions);
         }
 
     })
@@ -214,30 +229,33 @@ for (let button600 of button600List) {
 
 
     button600.addEventListener('click', () => {
-        if (button600.innerText === '$600') {
-            let randomQuestion = (arr) => {
-                let randomNumber = Math.ceil(Math.random() * 2009); // randomItem is the index number that comes out of this 
-                button600.removeEventListener('mouseenter', banana);
-                button600.removeEventListener('mouseout', banana);
+        if (clicked === false) {
+            if (button600.innerText === '$600') {
+                let randomQuestion = (arr) => {
+                    let randomNumber = Math.ceil(Math.random() * 2009); // randomItem is the index number that comes out of this 
+                    button600.removeEventListener('mouseenter', banana);
+                    button600.removeEventListener('mouseout', banana);
 
-                // Adds value to MoneyBag
-                if (button600.innerText === '$600') {
-                    score = 0;
-                    score += 600;
-                    console.log(score);
-                    button600.innerText = 'X';
-                }
+                    // Adds value to MoneyBag
+                    if (button600.innerText === '$600') {
+                        clicked = true
+                        score = 0;
+                        score += 600;
+                        console.log(score);
+                        button600.innerText = 'X';
+                    }
 
-                // Fades out button after clicked
-                if (button600.style.opacity === '') {
-                    button600.style.opacity = '0.5';
+                    // Fades out button after clicked
+                    if (button600.style.opacity === '') {
+                        button600.style.opacity = '0.5';
+                    }
+                    console.log(arr[randomNumber]);
+                    questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
+                    dataForMoneyBag = button600.innerText;
+                    dataForSubmit = arr[randomNumber].answer;
                 }
-                console.log(arr[randomNumber]);
-                questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
-                dataForMoneyBag = button600.innerText;
-                dataForSubmit = arr[randomNumber].answer;
+                randomQuestion(six600$Questions);
             }
-            randomQuestion(six600$Questions);
         }
     })
 }
@@ -256,30 +274,33 @@ for (let button800 of button800List) {
     button800.addEventListener('mouseout', banana);
 
     button800.addEventListener('click', () => {
-        if (button800.innerText === '$800') {
-            let randomQuestion = (arr) => {
-                let randomNumber = Math.ceil(Math.random() * 2009) // randomItem is the index number that comes out of this 
-                button800.removeEventListener('mouseenter', banana);
-                button800.removeEventListener('mouseout', banana);
+        if (clicked === false) {
+            if (button800.innerText === '$800') {
+                let randomQuestion = (arr) => {
+                    let randomNumber = Math.ceil(Math.random() * 2009) // randomItem is the index number that comes out of this 
+                    button800.removeEventListener('mouseenter', banana);
+                    button800.removeEventListener('mouseout', banana);
 
-                // Adds value to MoneyBag
-                if (button800.innerText === '$800') {
-                    score = 0;
-                    score += 800;
-                    console.log(score);
-                    button800.innerText = 'X';
-                }
+                    // Adds value to MoneyBag
+                    if (button800.innerText === '$800') {
+                        clicked = true;
+                        score = 0;
+                        score += 800;
+                        console.log(score);
+                        button800.innerText = 'X';
+                    }
 
-                // Fades out button after clicked
-                if (button800.style.opacity === '') {
-                    button800.style.opacity = '0.5';
+                    // Fades out button after clicked
+                    if (button800.style.opacity === '') {
+                        button800.style.opacity = '0.5';
+                    }
+                    console.log(arr[randomNumber]);
+                    questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
+                    dataForMoneyBag = button800.innerText;
+                    dataForSubmit = arr[randomNumber].answer;
                 }
-                console.log(arr[randomNumber]);
-                questionDisplay.innerText = `Category: ${arr[randomNumber].category} || ${arr[randomNumber].question}`
-                dataForMoneyBag = button800.innerText;
-                dataForSubmit = arr[randomNumber].answer;
+                randomQuestion(eight800$Questions);
             }
-            randomQuestion(eight800$Questions);
         }
     })
 }
