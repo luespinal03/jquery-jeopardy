@@ -116,7 +116,6 @@ for (let button100 of button100List) {
                 randomQuestion(one100$Questions);
             }
         }
-
     })
 }
 
@@ -137,7 +136,7 @@ for (let button200 of button200List) {
         if (clicked === false) {
             if (button200.innerText === '$200') {
                 let randomQuestion = (arr) => {
-                    let randomNumber = Math.ceil(Math.random() * 2009); // randomItem is the index number that comes out of this 
+                    let randomNumber = Math.ceil(Math.random() * 6890); // randomItem is the index number that comes out of this 
                     button200.removeEventListener('mouseenter', banana);
                     button200.removeEventListener('mouseout', banana);
 
@@ -162,8 +161,6 @@ for (let button200 of button200List) {
             }
 
         }
-
-
     })
 }
 
@@ -185,7 +182,7 @@ for (let button400 of button400List) {
         if (clicked === false) {
             if (button400.innerText === '$400') {
                 let randomQuestion = (arr) => {
-                    let randomNumber = Math.ceil(Math.random() * 2009); // randomItem is the index number that comes out of this 
+                    let randomNumber = Math.ceil(Math.random() * 9610); // randomItem is the index number that comes out of this 
                     button400.removeEventListener('mouseenter', banana);
                     button400.removeEventListener('mouseout', banana);
 
@@ -210,7 +207,6 @@ for (let button400 of button400List) {
                 randomQuestion(four400$Questions);
             }
         }
-
     })
 }
 
@@ -232,7 +228,7 @@ for (let button600 of button600List) {
         if (clicked === false) {
             if (button600.innerText === '$600') {
                 let randomQuestion = (arr) => {
-                    let randomNumber = Math.ceil(Math.random() * 2009); // randomItem is the index number that comes out of this 
+                    let randomNumber = Math.ceil(Math.random() * 4652); // randomItem is the index number that comes out of this 
                     button600.removeEventListener('mouseenter', banana);
                     button600.removeEventListener('mouseout', banana);
 
@@ -277,7 +273,7 @@ for (let button800 of button800List) {
         if (clicked === false) {
             if (button800.innerText === '$800') {
                 let randomQuestion = (arr) => {
-                    let randomNumber = Math.ceil(Math.random() * 2009) // randomItem is the index number that comes out of this 
+                    let randomNumber = Math.ceil(Math.random() * 7293) // randomItem is the index number that comes out of this 
                     button800.removeEventListener('mouseenter', banana);
                     button800.removeEventListener('mouseout', banana);
 
